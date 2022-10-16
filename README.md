@@ -1,46 +1,19 @@
-# Getting Started with Create React App
+# Frontend Take Home Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Design
 
-## Available Scripts
+I decided to break the main view up into two specific sub-views that I called "showcase" and "table". The showcase was for displaying all drawn hands in a "thumbnail" style as well as several buttons for interacting with the deck. The table was solely for displaying the currently active hand as well as what the best hand within that would be. I wanted the focus to be on whatever the active hand was and only a small area for interaction since the "value" in the project is the determination of what your best hand is. I also wanted to break the actual cards out into their own component since they seemed to be fairly stateless and reusable. It seemed to make sense to have them be used in both the Showcase and Table views while just having a size prop to differentiate between the two.
 
-In the project directory, you can run:
+## Structure
 
-### `npm start`
+I wanted to structure the project similarly (although not exactly, due to the time constraint) how I would in a work environment. I chose to break out the api interactions, components, and even utility functions into their own folders to allow easier intuition of where new elements of the system would go or where you could find them if you were new. I wrote unit tests for the two "heaviest" pieces which ended up being the showcase and the deck utilities due to them containing the bulk of both the logic and interactions.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Global State
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+While it was mentioned as optional in the test, I specifically chose not to pursue to a global state management library like Redux or even something like React Context. Considering there very limited interactions between the different elements of the system I didn't think it was necessary to structure the state that way.
 
-### `npm test`
+## Other Thoughts
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I would have loved to have had to time to give a little more care to the UI both from a responsiveness angle but also just in look and polish. I think some level of animation would have been a really nice touch as well. I also would have liked to add React Suspense to handle any loading state bits when calling the API to draw a new hand.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Regardless of some small changes though, I really enjoyed the process of getting to put this together!
